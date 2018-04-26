@@ -8,6 +8,7 @@ passw = "098.87"
 #---DEF------BotóEntrar------------------------------------------
 
 def codigoBoton():
+
     if cuadroNombre.get() == nom and cuadroPass.get() == passw:
     
         tkMessageBox.showinfo("Correcto", "Te has logeado correctamente")
