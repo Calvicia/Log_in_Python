@@ -1,9 +1,14 @@
 from Tkinter import *
+
 import tkMessageBox
 
+
 raiz = Tk()
+
 nom = "09l90on"
+
 passw = "098.87"
+
 
 #---DEF------BotóEntrar------------------------------------------
 
