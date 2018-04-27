@@ -1,8 +1,8 @@
-This code opens one frame that shows the LOG IN page,
-There we find two buttons, one for Log in and another for Sign in
-If you Log in correctly you will see a message that says "You log in correctly"
-If not you will se a message that says "You log in incorrectly, revise your user and password"
-The sign in button opens a new frame were you can establish new value to User and Password
+# This code opens one frame that shows the LOG IN page,
+# There we find two buttons, one for Log in and another for Sign in
+# If you Log in correctly you will see a message that says "You log in correctly"
+# If not you will se a message that says "You log in incorrectly, revise your user and password"
+# The sign in button opens a new frame were you can establish new value to User and Password
 
   
     
