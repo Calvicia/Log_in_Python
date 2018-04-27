@@ -1,150 +1,150 @@
-from Tkinter import *
+    from Tkinter import *
 
-import tkMessageBox
-
-
-raiz = Tk()
-
-nom = "09l90on"
-
-passw = "098.87"
+    import tkMessageBox
 
 
-#---DEF------BotóEntrar------------------------------------------
+    raiz = Tk()
 
-def codigoBoton():
+    nom = "09l90on"
 
-    if cuadroNombre.get() == nom and cuadroPass.get() == passw:
+    passw = "098.87"
+
+
+    #---DEF------BotóEntrar------------------------------------------
+
+    def codigoBoton():
+
+        if cuadroNombre.get() == nom and cuadroPass.get() == passw:
     
-        tkMessageBox.showinfo("Correcto", "Te has logeado correctamente")
+            tkMessageBox.showinfo("Correcto", "Te has logeado correctamente")
         
         
-        raiz.destroy()
+            raiz.destroy()
         
         
-    else:
+        else:
     
-        tkMessageBox.showinfo("Mal", "Te has logeado incorrectamente, revista contrasenya o nombre")
+            tkMessageBox.showinfo("Mal", "Te has logeado incorrectamente, revista contrasenya o nombre")
 
-#---DEF------BotóRegistre------------------------------------------
+    #---DEF------BotóRegistre------------------------------------------
 
-def Registre():
+    def Registre():
   
-    a = Tk()
+        a = Tk()
     
-    aFrame = Frame(a,width=0,height=0)
+        aFrame = Frame(a,width=0,height=0)
     
-    aFrame.pack()
+        aFrame.pack()
     
 
-    cuadroNom = StringVar()
+        cuadroNom = StringVar()
     
-    cuadroPas = Entry(aFrame)
+        cuadroPas = Entry(aFrame)
 
 
-    def Aceptar():
+        def Aceptar():
     
-        global nom
+            global nom
         
-        global passw
+            global passw
         
        
-        nom = cuadroNom.get()
+            nom = cuadroNom.get()
         
-        passw = cuadroPas.get()
-        
-
-        a.destroy()
+            passw = cuadroPas.get()
         
 
-        print nom
-        
-        print passw
+            a.destroy()
         
 
-    nombreLabel = Label(aFrame, text = "Nuevo nombre:")
+            print nom
+        
+            print passw
+        
+
+        nombreLabel = Label(aFrame, text = "Nuevo nombre:")
     
+        nombreLabel.grid(row = 0, column = 0, sticky="e", padx=5, pady= 5)
+    
+
+        cuadroNom = Entry(aFrame, textvariable=nom)
+    
+        cuadroNom.grid(row=0, column = 1, padx=5, pady= 5)
+    
+        cuadroNom.config(fg="Black", justify = "left")
+    
+
+        pasLabel = Label(aFrame, text = "Nueva password:")
+    
+        pasLabel.grid(row = 1, column = 0, sticky="e", padx=5, pady= 5)
+    
+
+        cuadroPas.grid(row=1, column = 1, padx=5, pady= 5)
+    
+
+        botonAc = Button(a, text = "Aceptar", command = Aceptar)
+    
+        botonAc.grid(row = 1, column = 2, padx=5, pady= 5)
+    
+        botonAc.pack()
+    
+    
+    
+        a.mainloop()
+    #------------Frames/var------------------------------------
+    miFrame = Frame(raiz, width = 500, height = 500)
+
+    miFrame.pack()
+
+
+    minombre = StringVar()
+
+    cuadroPass = Entry(miFrame)
+
+
+    #-------------Nom--------------------------------------------
+
+    nombreLabel = Label(miFrame, text = "Nombre:")
+
     nombreLabel.grid(row = 0, column = 0, sticky="e", padx=5, pady= 5)
-    
-
-    cuadroNom = Entry(aFrame, textvariable=nom)
-    
-    cuadroNom.grid(row=0, column = 1, padx=5, pady= 5)
-    
-    cuadroNom.config(fg="Black", justify = "left")
-    
-
-    pasLabel = Label(aFrame, text = "Nueva password:")
-    
-    pasLabel.grid(row = 1, column = 0, sticky="e", padx=5, pady= 5)
-    
-
-    cuadroPas.grid(row=1, column = 1, padx=5, pady= 5)
-    
-
-    botonAc = Button(a, text = "Aceptar", command = Aceptar)
-    
-    botonAc.grid(row = 1, column = 2, padx=5, pady= 5)
-    
-    botonAc.pack()
-    
-    
-    
-    a.mainloop()
-#------------Frames/var------------------------------------
-miFrame = Frame(raiz, width = 500, height = 500)
-
-miFrame.pack()
 
 
-minombre = StringVar()
+    cuadroNombre = Entry(miFrame, textvariable=minombre)
 
-cuadroPass = Entry(miFrame)
+    cuadroNombre.grid(row=0, column = 1, padx=5, pady= 5)
 
-
-#-------------Nom--------------------------------------------
-
-nombreLabel = Label(miFrame, text = "Nombre:")
-
-nombreLabel.grid(row = 0, column = 0, sticky="e", padx=5, pady= 5)
+    cuadroNombre.config(fg="Black", justify = "left")
 
 
-cuadroNombre = Entry(miFrame, textvariable=minombre)
+    #------------Password-------------------------------------------
 
-cuadroNombre.grid(row=0, column = 1, padx=5, pady= 5)
+    passLabel = Label(miFrame, text = "Password:")
 
-cuadroNombre.config(fg="Black", justify = "left")
-
-
-#------------Password-------------------------------------------
-
-passLabel = Label(miFrame, text = "Password:")
-
-passLabel.grid(row = 1, column = 0, sticky="e", padx=5, pady= 5)
+    passLabel.grid(row = 1, column = 0, sticky="e", padx=5, pady= 5)
 
 
-cuadroPass.grid(row=1, column = 1, padx=5, pady= 5)
+    cuadroPass.grid(row=1, column = 1, padx=5, pady= 5)
 
 
 
-#---------BotoRegistre-------------------------------------
+    #---------BotoRegistre-------------------------------------
 
-botonRegistre = Button(raiz, text = "Registre", command = Registre)
+    botonRegistre = Button(raiz, text = "Registre", command = Registre)
 
-botonRegistre.grid(row = 0, column = 2, padx=5, pady= 5)
+    botonRegistre.grid(row = 0, column = 2, padx=5, pady= 5)
 
-botonRegistre.pack()
+    botonRegistre.pack()
 
 
-#----------BotóLogIn----------------------------------------
+    #----------BotóLogIn----------------------------------------
 
-botonEnvio = Button(raiz, text = "Enviar", command = codigoBoton)
+    botonEnvio = Button(raiz, text = "Enviar", command = codigoBoton)
 
-botonEnvio.grid(row = 1, column = 2, padx=5, pady= 5)
+    botonEnvio.grid(row = 1, column = 2, padx=5, pady= 5)
 
-botonEnvio.pack()
+    botonEnvio.pack()
 
 
 
 
-raiz.mainloop()
+    raiz.mainloop()
